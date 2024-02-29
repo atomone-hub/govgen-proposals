@@ -25,8 +25,14 @@
 ## Governance votes
 > This sections details the meaning of each vote options, according to the
 > proposal context.
-
-- YES:
-- NO:
-- NO WITH VETO:
-- ABSTAIN
+> 
+> - YES: You support ...
+> - NO: You don't support ...
+> - NO WITH VETO - A ‘NoWithVeto’ vote indicates a proposal either (1) is
+>   deemed to be spam, i.e., irrelevant to AtomOne, (2) disproportionately
+>   infringes on minority interests, or (3) violates or encourages violation of
+>   the rules of engagement as currently set out by GovGen governance. If the
+>   number of ‘NoWithVeto’ votes is greater than a third of total votes, the
+>   proposal is rejected and the deposits are burned.
+> - ABSTAIN - You wish to contribute to quorum but you formally decline to vote
+>   either for or against the proposal.
