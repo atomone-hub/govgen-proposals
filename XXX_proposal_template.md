@@ -1,5 +1,9 @@
 # Proposal [PROPOSAL-NUMBER]: [TITLE]
 
+> This template is designed to draft a text proposal for AtomOne. This draft
+> will be used to start discussions and potentially submit it on the GovGen
+> chain.
+
 ## Changelog
 * [date]: [changelog]
 
