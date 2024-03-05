@@ -9,7 +9,9 @@ the more technical ADR (Architecture Decision Records). The intent of such a
 mix is to ensure that proposers go into all the details of their proposals.
 
 A GovGen text proposal has a voting period of 365 days, requires a min deposit
-of 50govgen and a deposit of 5,000govgen.
+of 50 $GOVGEN that will need to come from the initial onchain proposer, 
+and a total deposit of 5,000 $GOVGEN that can be permissionlessly funded
+by any account with balance with arbitrary amounts.
 -->
 
 ## Changelog
