@@ -66,14 +66,15 @@ Note however that the ICF will be entirely slashed.
    1. Moreover, the $ATOM that did not vote will get a 3% malus on top in order
       to (slightly) punish inactivity
       
-4. **Liquid $ATOM**: will receive a standard 1x multiplier.
+4. **Liquid $ATOM**: will equate to the *non-voting* cathegory and receive the
+   same mutliplier as $ATOM that did not vote.
 
 The following table is also provided for a quick recap:
 
 |                    |  DIDN'T VOTE  | YES | ABSTAIN | NO |    NWV    |
 |:------------------:|:-------------:|:---:|:-------:|:--:|:---------:|
 | Staking multiplier | B x malus |  1  |  B  |  4 | 4 x bonus |
-| Liquid multiplier  |       1       |  -  |    -    |  - |     -     |
+| Liquid multiplier  | B x malus |  -  |    -    |  - |     -     |
 
 [**RESERVED FOR DATA AND CODE**]
 ...
