@@ -31,7 +31,7 @@ addressing security concerns, marked a pivotal moment that underscored the
 necessity for AtomOne. AtomOne, thus, is not merely a technical divergence but
 a philosophical stand for a network that remains true to the principles of
 minimalism in its IBC/ICS hub functionality, robust security model, and an
- dintelligent, aligned community governance structure.
+intelligent, aligned community governance structure.
 
 ## Decision
 
