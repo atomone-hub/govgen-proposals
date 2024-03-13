@@ -42,6 +42,7 @@ engagement, and alignment with AtomOne's vision. Please note, the intent of the
 distribution mechanism is to *increase* the total future supply of $ATONE with
 respect to the current supply of $ATOM, therefore there won't be
 **any penalties**, the mininum airdropped amount will be 1x the account balance.
+Note however that the ICF will be entirely slashed.
 
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
    voted *YES* at the snapshot, which is the minimum possible.
@@ -83,8 +84,8 @@ being as this proposal seeks to establish a baseline mechanism.
 * Establishes a fair and principled token distribution mechanism that aligns with
   AtomOne's founding ethos.
 
-* Sets a precedent for future similar endevours, demonstrating the importance of
-  community alignment and shared values in token distribution decisions.
+* Sets a precedent for future similar endeavours, demonstrating the importance 
+  of community alignment and shared values in token distribution decisions.
 
 ## Alternatives
 
