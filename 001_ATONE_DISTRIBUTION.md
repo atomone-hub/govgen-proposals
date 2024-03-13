@@ -46,6 +46,7 @@ Note however that the ICF will be entirely slashed.
 
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
    voted *YES* at the snapshot, which is the minimum possible.
+
 2. **NO and NWV Votes**: Acknowledged with a 3x multiplier on top of the $ATOM
    that voted *NO* and *NWV*, emphasizing the critical stance against the monetary
    token proposition and alignment with AtomOne's security philosophy. The
@@ -54,20 +55,33 @@ Note however that the ICF will be entirely slashed.
    1. Moreover, the $ATOM that voted *NWV* will also get at 3% bonus on top in
    order to (slightly) reward the stronger political stance.
 
-3. **Non-Voters**: It is considered to be *non-voting* the $ATOM that either did
-   not vote or abstained. Assigned a base multiplier resulting from the blend of
+3. **ABSTAIN Votes**: Assigned a base multiplier resulting from the blend of
    *YES*, *NO*, and *NWV* votes to essentially provide a "neutral" multiplier
    that reflects the turnout of proposal 848 accounting only for active votes.
    The multiplier `B` is computed as `B = Y + (N + V) * 4` where `Y` is the
    *relative* percentage of *YES* votes (i.e. the total $ATOMs that voted *YES*
    over the sum of total $ATOMs that voted either *YES*, *NO*, or *NWV*), and
-   `N` and `V` are the *relative percentages* of respectively *NO* and *NWV* votes.
+   `N` and `V` are the *relative percentages* of respectively *NO* and *NWV*
+   votes.
 
-   1. Moreover, the $ATOM that did not vote will get a 3% malus on top in order
-      to (slightly) punish inactivity
-      
-4. **Liquid $ATOM**: will equate to the *non-voting* cathegory and receive the
+4. **Non-Voters**: It is considered to be *non-voting* the $ATOM that did not
+   vote at all (even through its delegations). *Non-voters*  are also
+   considered neutral, so they get the same multiplier, but with also a 3%
+   malus to (slightly) punish inactivity.
+
+5. **Liquid $ATOM**: will equate to the *non-voting* cathegory and receive the
    same mutliplier as $ATOM that did not vote.
+
+> [!NOTE] 
+> A voter is an account that has voted directly or indirectly via his
+> delegations. 
+> A non-voter is an account that did not vote nor all (or part of) his
+> delegations.
+
+> [!NOTE]
+> An account that has voted indirectly through its delegations may have see its
+> balance affected by different multipliers depending on the votes of its
+> delegations.
 
 The following table is also provided for a quick recap:
 
