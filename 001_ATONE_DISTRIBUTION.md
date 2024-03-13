@@ -69,7 +69,7 @@ The following table is also provided for a quick recap:
 |                    |  DIDN'T VOTE  | YES | ABSTAIN | NO |    NWV    |
 |:------------------:|:-------------:|:---:|:-------:|:--:|:---------:|
 | Staking multiplier | B x malus |  1  |  B  |  4 | 4 x bonus |
-| Liquid multiplier  |       1       |  1  |    1    |  1 |     1     |
+| Liquid multiplier  |                     1                          |
 
 [**RESERVED FOR DATA AND CODE**]
 ...
