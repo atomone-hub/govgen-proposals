@@ -106,4 +106,4 @@ alternative mechanisms as part of this proposal.
 * **NO WITH VETO**: You strongly oppose the proposal due to perceived inequities
                     or deviations from AtomOne's foundational principles.
 * **ABSTAIN**: You prefer to contribute to quorum without endorsing or opposing
-* the proposal directly.
+  the proposal directly.
