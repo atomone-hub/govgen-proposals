@@ -50,8 +50,10 @@ Note however that the ICF will be entirely slashed.
    that voted *NO* and *NWV*, emphasizing the critical stance against the monetary
    token proposition and alignment with AtomOne's security philosophy. The
    resulting balance will essencially be 4x the original $ATOM balance.
-2.1. Moreover, the $ATOM that voted *NWV* will also get at 3% bonus on top in
-order to (slightly) reward the stronger political stance.
+
+   1. Moreover, the $ATOM that voted *NWV* will also get at 3% bonus on top in
+   order to (slightly) reward the stronger political stance.
+
 3. **Non-Voters**: It is considered to be *non-voting* the $ATOM that either did
    not vote or abstained. Assigned a base multiplier resulting from the blend of
    *YES*, *NO*, and *NWV* votes to essentially provide a "neutral" multiplier
@@ -60,8 +62,10 @@ order to (slightly) reward the stronger political stance.
    *relative* percentage of *YES* votes (i.e. the total $ATOMs that voted *YES*
    over the sum of total $ATOMs that voted either *YES*, *NO*, or *NWV*), and
    `N` and `V` are the *relative percentages* of respectively *NO* and *NWV* votes.
-3.1. Moreover, the $ATOM that did not vote will get a 3% malus on top in order to
-(slightly) punish inactivity
+
+   1. Moreover, the $ATOM that did not vote will get a 3% malus on top in order
+      to (slightly) punish inactivity
+      
 4. **Liquid $ATOM**: will receive a standard 1x multiplier.
 
 The following table is also provided for a quick recap:
