@@ -3,6 +3,7 @@
 ## Changelog
 
 * March 13th 2024: first draft
+* March 14th 2024: add data and code
 
 ## Status
 
@@ -42,15 +43,28 @@ engagement, and alignment with AtomOne's vision. Please note, the intent of the
 distribution mechanism is to *increase* the total future supply of $ATONE with
 respect to the current supply of $ATOM, therefore there won't be
 **any penalties**, the mininum airdropped amount will be 1x the account balance.
-Note however that the ICF will be entirely slashed.
+**Note however that the ICF will be entirely slashed**.
+
+> [!NOTE]
+> We specifically refer to the *$ATOM that voted*, and not accounts, to 
+> accurately reflect how the distribution mechanism will work, which also
+> mirrors in practice how the `x/gov` tally works on the Cosmos Hub.
+> The final balance for each account will be the result of the contributions
+> from each $ATOM with which they either voted (and how), or did not.
+
+> [!NOTE]
+> A *voting* $ATOM is $ATOM that has voted either directly or indirectly via 
+> delegation.
+> A *non-voting* $ATOM is $ATOM that did not vote either directly or indirectly
+> because the validator it is delegated to also did not vote.
 
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
    voted *YES* at the snapshot, which is the minimum possible.
 
 2. **NO and NWV Votes**: Acknowledged with a 3x multiplier on top of the $ATOM
-   that voted *NO* and *NWV*, emphasizing the critical stance against the monetary
-   token proposition and alignment with AtomOne's security philosophy. The
-   resulting balance will essencially be 4x the original $ATOM balance.
+   that voted *NO* and *NWV*, emphasizing the critical stance against the
+   monetary token proposition and alignment with AtomOne's security philosophy.
+   The resulting balance will essencially be 4x the original $ATOM balance.
 
    1. Moreover, the $ATOM that voted *NWV* will also get at 3% bonus on top in
    order to (slightly) reward the stronger political stance.
@@ -59,48 +73,55 @@ Note however that the ICF will be entirely slashed.
    *YES*, *NO*, and *NWV* votes to essentially provide a "neutral" multiplier
    that reflects the turnout of proposal 848 accounting only for active votes.
    The multiplier `B` is computed as `B = Y + (N + V) * 4` where `Y` is the
-   *relative* percentage of *YES* votes (i.e. the total $ATOMs that voted *YES*
-   over the sum of total $ATOMs that voted either *YES*, *NO*, or *NWV*), and
-   `N` and `V` are the *relative percentages* of respectively *NO* and *NWV*
-   votes.
+   *relative percentage* of *YES* votes (i.e. the total $ATOMs that voted *YES*
+   over the sum of total $ATOMs that voted *YES*, *NO*, and *NWV*), and `N` and
+   `V` are the *relative percentages* of respectively *NO* and *NWV* votes.
 
-4. **Non-Voters**: It is considered to be *non-voting* the $ATOM that did not
-   vote at all (even through its delegations). *Non-voters*  are also
-   considered neutral, so they get the same multiplier, but with also a 3%
-   malus to (slightly) punish inactivity.
+4. **Did not vote**: It is considered to be *non-voting* the $ATOM that did not
+   vote at all (even through its delegations). The $ATOMs that *did not vote* 
+   are also considered neutral, so they get the same multiplier, but they incur
+   in an additional 3% malus to (slightly) punish inactivity.
 
 5. **Liquid $ATOM**: will equate to the *non-voting* cathegory and receive the
-   same mutliplier as $ATOM that did not vote.
-
-> [!NOTE] 
-> A voter is an account that has voted directly or indirectly via his
-> delegations. 
-> A non-voter is an account that did not vote nor all (or part of) his
-> delegations.
+   same mutliplier as $ATOM that *did not vote*.
 
 > [!NOTE]
-> An account that has voted indirectly through its delegations may have see its
+> An account that has voted indirectly through its delegations may see its
 > balance affected by different multipliers depending on the votes of its
 > delegations.
+> The same reasoning applies in the case of *weighted* votes.
+> Moreover, it is always the case that for any account that had both staked as
+> well as liquid $ATOM, the resulting $ATONE balance will be the result of the
+> contributions of each part as already discussed.
 
 The following table is also provided for a quick recap:
 
-|                    |  DIDN'T VOTE  | YES | ABSTAIN | NO |    NWV    |
+|                    |  DID NOT VOTE | YES | ABSTAIN | NO |    NWV    |
 |:------------------:|:-------------:|:---:|:-------:|:--:|:---------:|
-| Staking multiplier | B x malus |  1  |  B  |  4 | 4 x bonus |
-| Liquid multiplier  | B x malus |  -  |    -    |  - |     -     |
+| Staking multiplier |    B x malus  |  1  |    B    | 4  | 4 x bonus |
+| Liquid multiplier  |    B x malus  |  -  |    -    | -  |     -     |
 
-To validate the data and run some simulations, we wrote some documentation and
-built a set of tools that can be found in this
-[repository](https://github.com/atomone-hub/genbox).
+Accompanying code that implements the proposed distribution mechanism is
+availabe at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/genbox). Please refer to the 
+[PROP-001.md](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md)
+document for a more detailed breakdown, and some preliminary data.
+
+According to the current calculations -- which **may** change -- the potential
+$ATONE distribution will be of around ~809.41 Millions.
+
+|                       |  DID NOT VOTE  |    YES    | ABSTAIN |   NO    |   NWV   | NOT STAKED |
+|:---------------------:|:--------------:|:---------:|:-------:|:-------:|:-------:|:----------:|
+|  Distributed $ATONE   |    159.07 M    |  167.57 M | 84.89 M | 132.1 M | 27.75 M |  238.03 M  |
+| Percentage over total |     20%        |     21%   |  10%    |   16%   |    3%   |    29%     |
 
 > [!WARNING]
-> The tools mentionned above are subject to change without prior notice. While
-> every effort has been made to ensure accuracy and reliability, there is no
-> guarantee that the tools will remain unchanged or error-free throughout the
-> distribution process. Users should exercise caution and discretion when
-> utilizing these tools and understand that any information or calculations
-> provided by them are subject to revision.
+> While we can attest for the correctness of the proposed methodology, we
+> cannot guarantee the same is true for the accompanying code and resulting 
+> preliminary data. Although every effort has been made to ensure accuracy and
+> reliability, there is no guarantee that the tools will remain unchanged or
+> error-free as further developments occur. Voters should exercise caution and
+> discretion when utilizing these tools, and understand that any information or
+> calculations provided by them are subject to revision.
 
 We acknowledge there are additional details to be discussed for the final $ATONE
 distribution, such as for example [issue #13](https://github.com/atomone-hub/genesis/issues/13)
