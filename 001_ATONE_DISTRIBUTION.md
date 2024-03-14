@@ -90,8 +90,17 @@ The following table is also provided for a quick recap:
 | Staking multiplier | B x malus |  1  |  B  |  4 | 4 x bonus |
 | Liquid multiplier  | B x malus |  -  |    -    |  - |     -     |
 
-[**RESERVED FOR DATA AND CODE**]
-...
+To validate the data and run some simulations, we wrote some documentation and
+built a set of tools that can be found in this
+[repository](https://github.com/atomone-hub/genbox).
+
+> [!WARNING]
+> The tools mentionned above are subject to change without prior notice. While
+> every effort has been made to ensure accuracy and reliability, there is no
+> guarantee that the tools will remain unchanged or error-free throughout the
+> distribution process. Users should exercise caution and discretion when
+> utilizing these tools and understand that any information or calculations
+> provided by them are subject to revision.
 
 We acknowledge there are additional details to be discussed for the final $ATONE
 distribution, such as for example [issue #13](https://github.com/atomone-hub/genesis/issues/13)
