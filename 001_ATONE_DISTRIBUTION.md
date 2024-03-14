@@ -109,10 +109,10 @@ document for a more detailed breakdown, and some preliminary data.
 According to the current calculations -- which **may** change -- the potential
 $ATONE distribution will be of around ~809.41 Millions.
 
-|                       |  DID NOT VOTE  |    YES    | ABSTAIN |   NO    |   NWV   | NOT STAKED |
-|:---------------------:|:--------------:|:---------:|:-------:|:-------:|:-------:|:----------:|
-|  Distributed $ATONE   |    159.07 M    |  167.57 M | 84.89 M | 132.1 M | 27.75 M |  238.03 M  |
-| Percentage over total |     20%        |     21%   |  10%    |   16%   |    3%   |    29%     |
+|                       |  DID NOT VOTE  |    YES    |  ABSTAIN |    NO    |   NWV    | NOT STAKED |
+|:---------------------:|:--------------:|:---------:|:--------:|:--------:|:--------:|:----------:|
+|  Distributed $ATONE   |   ~158.9 M     | ~63.75 M  | ~86.29 M | ~213.4 M | ~47.91 M | ~239.17 M  |
+| Percentage over total |    ~19.6%      |  ~7.8%    |  ~10.6%  |  ~26.4%  |   ~5.9   |  ~29.5%    |
 
 > [!WARNING]
 > While we can attest for the correctness of the proposed methodology, we
