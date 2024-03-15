@@ -42,7 +42,7 @@ outlined below, reflecting a balanced approach to reward participation,
 engagement, and alignment with AtomOne's vision. Please note, the intent of the
 distribution mechanism is to *increase* the total future supply of $ATONE with
 respect to the current supply of $ATOM, therefore there won't be
-**any penalties**, the mininum airdropped amount will be 1x the account balance.
+**any penalties**, the minimum airdropped amount will be 1x the account balance.
 **Note however that the ICF will be entirely slashed**.
 
 > [!NOTE]
@@ -64,9 +64,9 @@ respect to the current supply of $ATOM, therefore there won't be
 2. **NO and NWV Votes**: Acknowledged with a 3x multiplier on top of the $ATOM
    that voted *NO* and *NWV*, emphasizing the critical stance against the
    monetary token proposition and alignment with AtomOne's security philosophy.
-   The resulting balance will essencially be 4x the original $ATOM balance.
+   The resulting balance will essentially be 4x the original $ATOM balance.
 
-   1. Moreover, the $ATOM that voted *NWV* will also get at 3% bonus on top in
+   1. Moreover, the $ATOM that voted *NWV* will also get a 3% bonus on top in
    order to (slightly) reward the stronger political stance.
 
 3. **ABSTAIN Votes**: Assigned a base multiplier resulting from the blend of
@@ -82,15 +82,15 @@ respect to the current supply of $ATOM, therefore there won't be
    are also considered neutral, so they get the same multiplier, but they incur
    in an additional 3% malus to (slightly) punish inactivity.
 
-5. **Liquid $ATOM**: will equate to the *non-voting* cathegory and receive the
-   same mutliplier as $ATOM that *did not vote*.
+5. **Liquid $ATOM**: will equate to the *non-voting* category and receive the
+   same multiplier as $ATOM that *did not vote*.
 
 > [!NOTE]
 > An account that has voted indirectly through its delegations may see its
 > balance affected by different multipliers depending on the votes of its
 > delegations.
 > The same reasoning applies in the case of *weighted* votes.
-> Moreover, it is always the case that for any account that had both staked as
+> Moreover, it is always the case that for any account that has both staked as
 > well as liquid $ATOM, the resulting $ATONE balance will be the result of the
 > contributions of each part as already discussed.
 
@@ -102,7 +102,7 @@ The following table is also provided for a quick recap:
 | Liquid multiplier  |    B x malus  |  -  |    -    | -  |     -     |
 
 Accompanying code that implements the proposed distribution mechanism is
-availabe at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/genbox). Please refer to the 
+available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/govbox). Please refer to the 
 [PROP-001.md](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md)
 document for a more detailed breakdown, and some preliminary data.
 
@@ -133,7 +133,7 @@ being as this proposal seeks to establish a baseline mechanism.
 * Establishes a fair and principled token distribution mechanism that aligns with
   AtomOne's founding ethos.
 
-* Sets a precedent for future similar endeavours, demonstrating the importance 
+* Sets a precedent for future similar endeavors, demonstrating the importance 
   of community alignment and shared values in token distribution decisions.
 
 ## Alternatives
