@@ -4,6 +4,8 @@
 
 * March 13th 2024: first draft
 * March 14th 2024: add data and code
+* March 21th 2024: update distribution to ensure that active voters (yes and
+  no) don't have less than 2/3 of the supply.
 
 ## Status
 
@@ -39,11 +41,15 @@ intelligent, aligned community governance structure.
 In accordance with AtomOne's foundational principles and the discussions
 surrounding the token distribution, we propose the $ATONE distribution mechanism
 outlined below, reflecting a balanced approach to reward participation,
-engagement, and alignment with AtomOne's vision. Please note, the intent of the
-distribution mechanism is to *increase* the total future supply of $ATONE with
-respect to the current supply of $ATOM, therefore there won't be
-**any penalties**, the minimum airdropped amount will be 1x the account balance.
-**Note however that the ICF will be entirely slashed**.
+engagement, and alignment with AtomOne's vision. The intent of the distribution
+mechasnim is to *increase* the portion of no-voters regarding yes-voters, but
+also to ensures that the total of non-voters, abstainers and unbonded $ATONE is
+less than 1/3 of the supply. We consider that this portion of the supply needs
+to be slashed to preserve a good majority of active voters (yes and no),
+because we think this sleeping portion of the voting power might be harmful for
+AtomeOne.
+
+**Note that in addition the ICF will be entirely slashed**.
 
 > [!NOTE]
 > We specifically refer to the *$ATOM that voted*, and not accounts, to 
@@ -59,7 +65,7 @@ respect to the current supply of $ATOM, therefore there won't be
 > because the validator it is delegated to also did not vote.
 
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
-   voted *YES* at the snapshot, which is the minimum possible.
+   voted *YES* at the snapshot.
 
 2. **NO and NWV Votes**: Acknowledged with a 3x multiplier on top of the $ATOM
    that voted *NO* and *NWV*, emphasizing the critical stance against the
@@ -69,18 +75,37 @@ respect to the current supply of $ATOM, therefore there won't be
    1. Moreover, the $ATOM that voted *NWV* will also get a 3% bonus on top in
    order to (slightly) reward the stronger political stance.
 
-3. **ABSTAIN Votes**: Assigned a base multiplier resulting from the blend of
-   *YES*, *NO*, and *NWV* votes to essentially provide a "neutral" multiplier
-   that reflects the turnout of proposal 848 accounting only for active votes.
-   The multiplier `B` is computed as `B = Y + (N + V) * 4` where `Y` is the
-   *relative percentage* of *YES* votes (i.e. the total $ATOMs that voted *YES*
-   over the sum of total $ATOMs that voted *YES*, *NO*, and *NWV*), and `N` and
-   `V` are the *relative percentages* of respectively *NO* and *NWV* votes.
+3. **ABSTAIN Votes**: Assigned a multiplier `C` resulting from a formula that
+    ensures that the total of *abstainers*, *non-voting* and *unbonded* $ATONE
+    is limited to 33% of the supply.
+
+    The multiplier formula is the following:
+    ```math
+    C = \frac{t}{1-t} \cdot \frac{X_{Y} + 4 \cdot X_{N} + 4 \cdot Y_{NWV}}{X_{A}+X_{DNV}+X_{U}}
+    ```
+    <!-- TODO replace the formula with an image uploaded to IPFS ? Because
+    probably the latex rendering won't work in standard markdown renderer -->
+    
+    where:
+    - `C` is the multiplier
+    - `t` is the target percentage, which is 33%.
+    - `X` represent a supply in $ATOM, with annotations indicating the portion
+    of the supply:
+        - `Y` voted Yes
+        - `A` voted Abstain
+        - `N` voted No
+        - `NWV` voted No With Veto
+        - `DNV` DidN't Vote
+        - `U` Unbonded
+
+    > [!TIP]
+    > Additionnal information about how we ended up with this formila can be
+    > found [here](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md#multiplier-formula)
 
 4. **Did not vote**: It is considered to be *non-voting* the $ATOM that did not
-   vote at all (even through its delegations). The $ATOMs that *did not vote* 
-   are also considered neutral, so they get the same multiplier, but they incur
-   in an additional 3% malus to (slightly) punish inactivity.
+   vote at all (even through its delegations). The $ATOMs that *did not vote*
+   get the same multiplier as *abstainers*, but they incur in an additional 3%
+   malus to (slightly) punish inactivity.
 
 5. **Liquid $ATOM**: will equate to the *non-voting* category and receive the
    same multiplier as $ATOM that *did not vote*.
@@ -98,8 +123,8 @@ The following table is also provided for a quick recap:
 
 |                    |  DID NOT VOTE | YES | ABSTAIN | NO |    NWV    |
 |:------------------:|:-------------:|:---:|:-------:|:--:|:---------:|
-| Staking multiplier |    B x malus  |  1  |    B    | 4  | 4 x bonus |
-| Liquid multiplier  |    B x malus  |  -  |    -    | -  |     -     |
+| Staking multiplier |    C x malus  |  1  |    C    | 4  | 4 x bonus |
+| Liquid multiplier  |    C x malus  |  -  |    -    | -  |     -     |
 
 Accompanying code that implements the proposed distribution mechanism is
 available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/govbox). Please refer to the 
@@ -107,12 +132,16 @@ available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-
 document for a more detailed breakdown, and some preliminary data.
 
 According to the current calculations -- which **may** change -- the potential
-$ATONE distribution will be of around ~809.41 Millions.
+$ATONE distribution will be of around ~485.03 Millions.
 
-|                       |  DID NOT VOTE  |    YES    |  ABSTAIN |    NO    |   NWV    | NOT STAKED |
-|:---------------------:|:--------------:|:---------:|:--------:|:--------:|:--------:|:----------:|
-|  Distributed $ATONE   |   ~158.9 M     | ~63.75 M  | ~86.29 M | ~213.4 M | ~47.91 M | ~239.17 M  |
-| Percentage over total |    ~19.6%      |  ~7.8%    |  ~10.6%  |  ~26.4%  |   ~5.9   |  ~29.5%    |
+|                       |    TOTAL    | DID NOT VOTE |    YES     |     NO      | NOWITHVETO |  ABSTAIN   | NOT STAKED |
+|-----------------------|-------------|--------------|------------|-------------|------------|------------|------------|
+| Distributed           | 485,031,369 |   52,479,607 | 63,746,761 | 213,404,392 | 47,911,135 | 28,498,638 | 78,990,836 |
+| Percentage over total |             | 11%          | 13%        | 44%         | 10%        | 6%         | 16%        |
+
+- The $ATONE supply is ~1.415 times higher then the $ATOM supply.
+- The `C` multiplier regarding these figures is equal to ~0.814.
+- The ICF slashing represents 12,590,970 $ATOM.
 
 > [!WARNING]
 > While we can attest for the correctness of the proposed methodology, we
