@@ -4,9 +4,8 @@
 
 * March 13th 2024: first draft
 * March 14th 2024: add data and code
-* March 21th 2024: update distribution to ensure that active voters (yes and
-  no) don't have less than 2/3 of the supply. Reduce the final supply by a
-  factor of 10.
+* March 21st 2024: update distribution to ensure non-voters do not exceed 1/3 of $ATONE supply
+* March 21st 2024: reduce the final supply by a factor of 10.
 
 ## Status
 
@@ -43,12 +42,11 @@ In accordance with AtomOne's foundational principles and the discussions
 surrounding the token distribution, we propose the $ATONE distribution mechanism
 outlined below, reflecting a balanced approach to reward participation,
 engagement, and alignment with AtomOne's vision. The intent of the distribution
-mechasnim is to *increase* the portion of no-voters regarding yes-voters, but
-also to ensures that the total of non-voters, abstainers and unbonded $ATONE is
-less than 1/3 of the supply. We consider that this portion of the supply needs
-to be slashed to preserve a good majority of active voters (yes and no),
-because we think this sleeping portion of the voting power might be harmful for
-AtomeOne.
+mechasnim is to *increase* the percentage ownership in the network for the *NO*
+and *NWV* votes, but to also ensures that the percentage ownership of the
+non-voting cathegories does not exceed a fixed percentage, that is 1/3 of the
+total supply. A decimation factor is also applied at the end to reduce the total
+supply by a factor of 10.
 
 **Note that in addition the ICF will be entirely slashed**.
 
@@ -65,6 +63,11 @@ AtomeOne.
 > A *non-voting* $ATOM is $ATOM that did not vote either directly or indirectly
 > because the validator it is delegated to also did not vote.
 
+> [!WARNING]
+> The following mechanism does not explicitly account for the `K = 0.1`
+> decimation factor. It is considered implicit as it will be applied
+> indiscriminately alongside any other cathegory-specific multiplier
+
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
    voted *YES* at the snapshot.
 
@@ -76,32 +79,21 @@ AtomeOne.
    1. Moreover, the $ATOM that voted *NWV* will also get a 3% bonus on top in
    order to (slightly) reward the stronger political stance.
 
-3. **ABSTAIN Votes**: Assigned a multiplier `C` resulting from a formula that
-    ensures that the total of *abstainers*, *non-voting* and *unbonded* $ATONE
-    is limited to 33% of the supply.
-
-    The multiplier formula is the following:
-    ```math
-    C = \frac{t}{1-t} \cdot \frac{X_{Y} + 4 \cdot X_{N} + 4 \cdot Y_{NWV}}{X_{A}+X_{DNV}+X_{U}}
-    ```
-    <!-- TODO replace the formula with an image uploaded to IPFS ? Because
-    probably the latex rendering won't work in standard markdown renderer -->
-    
-    where:
-    - `C` is the multiplier
-    - `t` is the target percentage, which is 33%.
-    - `X` represent a supply in $ATOM, with annotations indicating the portion
-    of the supply:
-        - `Y` voted Yes
-        - `A` voted Abstain
-        - `N` voted No
-        - `NWV` voted No With Veto
-        - `DNV` DidN't Vote
-        - `U` Unbonded
-
-    > [!TIP]
-    > Additionnal information about how we ended up with this formila can be
-    > found [here](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md#multiplier-formula)
+3. **ABSTAIN Votes**: Assigned a multiplier `C` that ensures that the total
+   percentage ownership of the *Abstain*, *Did Not Vote* and *Not Staked*
+   cathegories does not exceed a target percentage `t` of 1/3:
+   ```
+   C = ( t / (1 - t) ) * ( ( y + 4n + 4nwv ) / ( a + dnv + u) )
+   ````    
+   where:
+   - `C` is the multiplier to be found
+   - `t` is the target percentage, which is *33%*.
+   - `y` represents the total $ATOM that voted *Yes*
+   - `a` represents the total $ATOM that voted *Abstain*
+   - `N` represents the total $ATOM that voted *No*
+   - `NWV` represents the total $ATOM that voted *No with Veto*
+   - `DNV` represents the total $ATOM that did not vote
+   - `U` Unbonded
 
 4. **Did not vote**: It is considered to be *non-voting* the $ATOM that did not
    vote at all (even through its delegations). The $ATOMs that *did not vote*
@@ -130,22 +122,23 @@ The following table is also provided for a quick recap:
 Accompanying code that implements the proposed distribution mechanism is
 available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/govbox). Please refer to the 
 [PROP-001.md](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md)
-document for a more detailed breakdown, and some preliminary data.
+document for a more detailed breakdown and further details on code, data and
+applied formulae.
 
+To obtain the final distribution, we also apply a decimation factor `K = 0.1`
+when computing balances.
 According to the current calculations -- which **may** change -- the potential
-$ATONE distribution will be of around ~485.03 Millions.
-
-Finally, to reduce the final supply, we also apply a decimation factor when
-computing final balances K=0.1 This results in a final total supply of 48,5M.
+$ATONE distribution will be of around ~48.5 Millions.
 
 |                       |   TOTAL    | DID NOT VOTE |    YES    |     NO     | NOWITHVETO |  ABSTAIN  | NOT STAKED |
 |-----------------------|------------|--------------|-----------|------------|------------|-----------|------------|
 | Distributed           | 48,503,137 |    5,247,961 | 6,374,676 | 21,340,439 |  4,791,114 | 2,849,864 |  7,899,084 |
 | Percentage over total |            | 11%          | 13%       | 44%        | 10%        | 6%        | 16%        |
+| Percentage of $ATOM   |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
 
-- The $ATONE supply is ~0.141 times less than the $ATOM supply.
-- The `C` multiplier regarding these figures is equal to ~0.814.
-- The ICF slashing represents 12,590,970 $ATOM.
+- The proposed $ATONE supply is ~1/7 of the $ATOM supply at the time of proposal 848.
+- The `C` multiplier is computed as ~0.814.
+- The ICF slashing represents a total of 12,590,970 $ATOM
 
 > [!WARNING]
 > While we can attest for the correctness of the proposed methodology, we
