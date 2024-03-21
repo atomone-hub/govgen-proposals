@@ -5,7 +5,8 @@
 * March 13th 2024: first draft
 * March 14th 2024: add data and code
 * March 21th 2024: update distribution to ensure that active voters (yes and
-  no) don't have less than 2/3 of the supply.
+  no) don't have less than 2/3 of the supply. Reduce the final supply by a
+  factor of 10.
 
 ## Status
 
@@ -134,12 +135,15 @@ document for a more detailed breakdown, and some preliminary data.
 According to the current calculations -- which **may** change -- the potential
 $ATONE distribution will be of around ~485.03 Millions.
 
-|                       |    TOTAL    | DID NOT VOTE |    YES     |     NO      | NOWITHVETO |  ABSTAIN   | NOT STAKED |
-|-----------------------|-------------|--------------|------------|-------------|------------|------------|------------|
-| Distributed           | 485,031,369 |   52,479,607 | 63,746,761 | 213,404,392 | 47,911,135 | 28,498,638 | 78,990,836 |
-| Percentage over total |             | 11%          | 13%        | 44%         | 10%        | 6%         | 16%        |
+Finally, to reduce the final supply, we also apply a decimation factor when
+computing final balances K=0.1 This results in a final total supply of 48,5M.
 
-- The $ATONE supply is ~1.415 times higher then the $ATOM supply.
+|                       |   TOTAL    | DID NOT VOTE |    YES    |     NO     | NOWITHVETO |  ABSTAIN  | NOT STAKED |
+|-----------------------|------------|--------------|-----------|------------|------------|-----------|------------|
+| Distributed           | 48,503,137 |    5,247,961 | 6,374,676 | 21,340,439 |  4,791,114 | 2,849,864 |  7,899,084 |
+| Percentage over total |            | 11%          | 13%       | 44%        | 10%        | 6%        | 16%        |
+
+- The $ATONE supply is ~0.141 times less than the $ATOM supply.
 - The `C` multiplier regarding these figures is equal to ~0.814.
 - The ICF slashing represents 12,590,970 $ATOM.
 
