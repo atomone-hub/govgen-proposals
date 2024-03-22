@@ -42,10 +42,10 @@ In accordance with AtomOne's foundational principles and the discussions
 surrounding the token distribution, we propose the $ATONE distribution mechanism
 outlined below, reflecting a balanced approach to reward participation,
 engagement, and alignment with AtomOne's vision. The intent of the distribution
-mechasnim is to *increase* the percentage ownership in the network for the *NO*
-and *NWV* votes, but to also ensures that the percentage ownership of the
-non-voting cathegories does not exceed a fixed percentage, that is 1/3 of the
-total supply. A decimation factor is also applied at the end to reduce the total
+mechanism is to *increase* the percentage ownership in the network for the *NO*
+and *No With Veto* (NWV) votes, but to also ensures that the percentage 
+ownership of the non-voting categories does not exceed a fixed 1/3 of the total
+supply. A decimation factor is also applied at the end to reduce the total
 supply by a factor of 10.
 
 **Note that in addition the ICF will be entirely slashed**.
@@ -66,7 +66,7 @@ supply by a factor of 10.
 > [!WARNING]
 > The following mechanism does not explicitly account for the `K = 0.1`
 > decimation factor. It is considered implicit as it will be applied
-> indiscriminately alongside any other cathegory-specific multiplier
+> indiscriminately alongside any other category-specific multiplier
 
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
    voted *YES* at the snapshot.
@@ -80,61 +80,61 @@ supply by a factor of 10.
    order to (slightly) reward the stronger political stance.
 
 3. **ABSTAIN Votes**: Assigned a multiplier `C` that ensures that the total
-   percentage ownership of the *Abstain*, *Did Not Vote* and *Not Staked*
-   cathegories does not exceed a target percentage `t` of 1/3:
+   percentage ownership of the *Abstain*, *Did Not Vote* (DNV) and *Not Staked*
+   categories does not exceed a target percentage `t` of 1/3:
+   ```math
+   C = (t / (1 - t)) * ((y + 4n + 4nwv) / (a + dnv + u))
    ```
-   C = ( t / (1 - t) ) * ( ( y + 4n + 4nwv ) / ( a + dnv + u) )
-   ````    
    where:
    - `C` is the multiplier to be found
-   - `t` is the target percentage, which is *33%*.
+   - `t` is the target percentage for the *non-voting* categories, which is *33%*.
    - `y` represents the total $ATOM that voted *Yes*
    - `a` represents the total $ATOM that voted *Abstain*
-   - `N` represents the total $ATOM that voted *No*
-   - `NWV` represents the total $ATOM that voted *No with Veto*
-   - `DNV` represents the total $ATOM that did not vote
-   - `U` Unbonded
+   - `n` represents the total $ATOM that voted *No*
+   - `nwv` represents the total $ATOM that voted *No With Veto*
+   - `dnv` represents the total $ATOM that *Did Not Vote*
+   - `u` represents the total $ATOM that *Unbonded* (*Not Staked*)
 
-4. **Did not vote**: It is considered to be *non-voting* the $ATOM that did not
-   vote at all (even through its delegations). The $ATOMs that *did not vote*
-   get the same multiplier as *abstainers*, but they incur in an additional 3%
-   malus to (slightly) punish inactivity.
+4. **Did not vote (DNV)**: It is considered to be *non-voting* the $ATOM that
+   did not vote at all (even through its delegations). The $ATOM that *DNV* get
+   the same multiplier as $ATOM that voted *Abstain*, but they incur in an
+   additional 3% malus to (slightly) punish inactivity.
 
-5. **Liquid $ATOM**: will equate to the *non-voting* category and receive the
-   same multiplier as $ATOM that *did not vote*.
+5. **Unbonded $ATOM (Not Staked)**: will equate to the *non-voting* category and
+   receive the same multiplier as $ATOM that *DNV*.
 
 > [!NOTE]
 > An account that has voted indirectly through its delegations may see its
 > balance affected by different multipliers depending on the votes of its
 > delegations.
 > The same reasoning applies in the case of *weighted* votes.
-> Moreover, it is always the case that for any account that has both staked as
-> well as liquid $ATOM, the resulting $ATONE balance will be the result of the
-> contributions of each part as already discussed.
+> Moreover, it is always the case that for any account that has both bonded as
+> well as unbonded $ATOM, the resulting $ATONE balance will come from the
+> contribution of each part as already discussed.
 
 The following table is also provided for a quick recap:
 
-|                    |  DID NOT VOTE | YES | ABSTAIN | NO |    NWV    |
-|:------------------:|:-------------:|:---:|:-------:|:--:|:---------:|
-| Staking multiplier |    C x malus  |  1  |    C    | 4  | 4 x bonus |
-| Liquid multiplier  |    C x malus  |  -  |    -    | -  |     -     |
+|                     |  DNV      | YES | ABSTAIN | NO |    NWV    |
+|---------------------|-----------|-----|---------|----|-----------|
+| Bonded multiplier   | C x malus |  1  |    C    | 4  | 4 x bonus |
+| Unbonded multiplier | C x malus |  -  |    -    | -  |     -     |
 
 Accompanying code that implements the proposed distribution mechanism is
 available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/govbox). Please refer to the 
 [PROP-001.md](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md)
 document for a more detailed breakdown and further details on code, data and
 applied formulae.
-
+the
 To obtain the final distribution, we also apply a decimation factor `K = 0.1`
 when computing balances.
-According to the current calculations -- which **may** change -- the potential
+According to the current calculations - which **may** change - the potential
 $ATONE distribution will be of around ~48.5 Millions.
 
-|                       |   TOTAL    | DID NOT VOTE |    YES    |     NO     | NOWITHVETO |  ABSTAIN  | NOT STAKED |
-|-----------------------|------------|--------------|-----------|------------|------------|-----------|------------|
-| Distributed           | 48,503,137 |    5,247,961 | 6,374,676 | 21,340,439 |  4,791,114 | 2,849,864 |  7,899,084 |
-| Percentage over total |            | 11%          | 13%       | 44%        | 10%        | 6%        | 16%        |
-| Percentage of $ATOM   |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
+|                    |   TOTAL    |      DNV     |    YES    |     NO     |    NWV     |  ABSTAIN  | NOT STAKED |
+|--------------------|------------|--------------|-----------|------------|------------|-----------|------------|
+| $ATONE Distributed | 48,503,137 |    5,247,961 | 6,374,676 | 21,340,439 |  4,791,114 | 2,849,864 |  7,899,084 |
+| *% Ownership*      |            | 11%          | 13%       | 44%        | 10%        | 6%        | 16%        |
+| *% $ATOM prop 848* |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
 
 - The proposed $ATONE supply is ~1/7 of the $ATOM supply at the time of proposal 848.
 - The `C` multiplier is computed as ~0.814.
@@ -156,8 +156,8 @@ being as this proposal seeks to establish a baseline mechanism.
 
 ## Consequences
 
-* Establishes a fair and principled token distribution mechanism that aligns with
-  AtomOne's founding ethos.
+* Establishes a fair and structured token distribution mechanism that aligns 
+  with AtomOne's founding ethos.
 
 * Sets a precedent for future similar endeavors, demonstrating the importance 
   of community alignment and shared values in token distribution decisions.
@@ -166,7 +166,9 @@ being as this proposal seeks to establish a baseline mechanism.
 
 Should this proposal fail to reach approval from the community, alternative
 distribution mechanisms might be discussed and used instead. We did not evaluate
-alternative mechanisms as part of this proposal.
+alternative mechanisms as part of this proposal, but the proposal methodology
+was revised based on community feedback during the
+[GovGen Townhalls](https://github.com/atomone-hub/genesis/tree/main/GovGen_Townhalls).
 
 ## Governance votes
 
