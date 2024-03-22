@@ -63,7 +63,7 @@ supply by a factor of 10.
 > A *non-voting* $ATOM is $ATOM that did not vote either directly or indirectly
 > because the validator it is delegated to also did not vote.
 
-> [!WARNING]
+> [!IMPORTANT]
 > The following mechanism does not explicitly account for the `K = 0.1`
 > decimation factor. It is considered implicit as it will be applied
 > indiscriminately alongside any other category-specific multiplier
