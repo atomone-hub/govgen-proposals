@@ -6,6 +6,7 @@
 * March 14th 2024: add data and code
 * March 21st 2024: update distribution to ensure non-voters do not exceed 1/3 of $ATONE supply
 * March 21st 2024: reduce the final supply by a factor of 10.
+* March 28st 2024: update the no-multiplier to x9
 
 ## Status
 
@@ -71,10 +72,10 @@ supply by a factor of 10.
 1. **YES Votes to Proposal 848**: standard 1x multiplier for the $ATOM that
    voted *YES* at the snapshot.
 
-2. **NO and NWV Votes**: Acknowledged with a 3x multiplier on top of the $ATOM
+2. **NO and NWV Votes**: Acknowledged with a 8x multiplier on top of the $ATOM
    that voted *NO* and *NWV*, emphasizing the critical stance against the
    monetary token proposition and alignment with AtomOne's security philosophy.
-   The resulting balance will essentially be 4x the original $ATOM balance.
+   The resulting balance will essentially be 9x the original $ATOM balance.
 
    1. Moreover, the $ATOM that voted *NWV* will also get a 3% bonus on top in
    order to (slightly) reward the stronger political stance.
@@ -83,7 +84,7 @@ supply by a factor of 10.
    percentage ownership of the *Abstain*, *Did Not Vote* (DNV) and *Not Staked*
    categories does not exceed a target percentage `t` of 1/3:
    ```math
-   C = (t / (1 - t)) * ((y + 4n + 4nwv) / (a + dnv + u))
+   C = (t / (1 - t)) * ((y + 9n + 9nwv) / (a + dnv + u))
    ```
    where:
    - `C` is the multiplier to be found
@@ -116,7 +117,7 @@ The following table is also provided for a quick recap:
 
 |                     |  DNV      | YES | ABSTAIN | NO |    NWV    |
 |---------------------|-----------|-----|---------|----|-----------|
-| Bonded multiplier   | C x malus |  1  |    C    | 4  | 4 x bonus |
+| Bonded multiplier   | C x malus |  1  |    C    | 9  | 9 x bonus |
 | Unbonded multiplier | C x malus |  -  |    -    | -  |     -     |
 
 Accompanying code that implements the proposed distribution mechanism is
@@ -124,21 +125,20 @@ available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-
 [PROP-001.md](https://github.com/atomone-hub/govbox/blob/master/PROP-001.md)
 document for a more detailed breakdown and further details on code, data and
 applied formulae.
-the
 To obtain the final distribution, we also apply a decimation factor `K = 0.1`
 when computing balances.
 According to the current calculations - which **may** change - the potential
-$ATONE distribution will be of around ~48.5 Millions.
+$ATONE distribution will be of around ~97 Millions.
 
-|                    |   TOTAL    |      DNV     |    YES    |     NO     |    NWV     |  ABSTAIN  | NOT STAKED |
+|                    |   TOTAL    | DID NOT VOTE |    YES    |     NO     | NOWITHVETO |  ABSTAIN  | NOT STAKED |
 |--------------------|------------|--------------|-----------|------------|------------|-----------|------------|
-| $ATONE Distributed | 48,503,137 |    5,247,961 | 6,374,676 | 21,340,439 |  4,791,114 | 2,849,864 |  7,899,084 |
-| *% Ownership*      |            | 11%          | 13%       | 44%        | 10%        | 6%        | 16%        |
+| $ATONE Distributed | 96,997,800 |   10,445,719 | 6,374,676 | 48,015,988 | 10,780,005 | 5,672,466 | 15,708,946 |
+| *% Ownership*      |            | 11%          | 7%        | 50%        | 11%        | 6%        | 16%        |
 | *% $ATOM prop 848* |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
 
 - The proposed $ATONE supply is ~1/7 of the $ATOM supply at the time of proposal 848.
-- The `C` multiplier is computed as ~0.814.
-- The ICF slashing represents a total of 12,590,970 $ATOM
+- The `C` multiplier is computed as ~1,620.
+- The ICF slashing represents a total of 12,677,878 $ATOM
 
 > [!WARNING]
 > While we can attest for the correctness of the proposed methodology, we
