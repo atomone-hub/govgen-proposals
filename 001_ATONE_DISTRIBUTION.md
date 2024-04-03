@@ -60,7 +60,7 @@ the total supply by a factor of 10.
 
 > [!NOTE]
 > In the context of this proposal, the term *voting* ATOM is intended to refer
-> to ATOM tha was used to vote on proposal 848 either directly or indirectly
+> to ATOM that was used to vote on proposal 848 either directly or indirectly
 > via delegation. A *non-voting* ATOM is ATOM that was not used to vote either
 > directly or indirectly because the validator it is delegated to also did not
 > vote.
