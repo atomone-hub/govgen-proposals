@@ -7,6 +7,7 @@
 * March 21st 2024: update distribution to ensure non-voters do not exceed 1/3 of ATONE supply
 * March 21st 2024: reduce the final supply by a factor of 10.
 * March 28th 2024: update the base multiplier for *No* and *NWV* votes to x9
+* April 3rd 2024: further text refinements for clarity and formality
 
 ## Status
 
@@ -14,14 +15,16 @@ Draft
 
 ## Summary
 
-This proposal seeks to establish a fair and principled distribution mechanism for
-ATONE, the native token of  AtomOne, reflecting the foundational principles as
-outlined in the AtomOne [founding documents](https://github.com/atomone-hub/genesis).
-The proposal tries to synthesize the [discussion](https://github.com/atomone-hub/genesis/issues/12)
+This proposal seeks to establish a fair and principled distribution mechanism 
+for ATONE, the native token of the AtomOne chain, reflecting the foundational 
+principles as outlined in the AtomOne 
+[founding documents](https://github.com/atomone-hub/genesis).
+The proposal tries to synthesize the 
+[discussion](https://github.com/atomone-hub/genesis/issues/12)
 around the ATONE distribution, and leveraging the snapshot from Cosmos Hub's
-[proposal 848](https://www.mintscan.io/cosmos/proposals/848), it aims to reward
-participation and engagement while adhering to AtomOne's ethos of intelligent
-distribution and governance.
+[proposal 848](https://www.mintscan.io/cosmos/proposals/848), 
+it aims to reward participation and engagement while adhering to AtomOne's ethos
+of intelligent distribution and governance.
 
 ## Context
 
@@ -41,13 +44,13 @@ intelligent, aligned community governance structure.
 
 In accordance with AtomOne's foundational principles and the discussions
 surrounding the token distribution, we propose the ATONE distribution mechanism
-outlined below, reflecting a balanced approach to reward participation,
-engagement, and alignment with AtomOne's vision. The intent of the distribution
-mechanism is to *increase* the percentage ownership in the network for the *NO*
-and *No With Veto* (NWV) votes on proposal 848, but to also ensures that the
-percentage ownership of the non-voting categories does not exceed a fixed 1/3
-of the total supply. A decimation factor is also applied at the end to reduce
-the total supply by a factor of 10.
+outlined below, reflecting an attempt to create balanced approach that rewards
+participation, engagement, and alignment with AtomOne's vision. The intent of
+the distribution mechanism is to *increase* the percentage ownership in the
+network for the *NO* and *No With Veto* (NWV) votes on proposal 848, but to also
+ensures that the percentage ownership of the non-voting categories does not
+exceed a fixed 1/3 of the total supply. A decimation factor is also applied at
+the end to reduce the total supply by a factor of 10.
 
 **Note that, in addition, it is proposed that the ICF will be entirely slashed**.
 
@@ -132,10 +135,10 @@ when computing balances.
 According to the current calculations - which **may** change - the potential
 ATONE distribution will be of approximately ~97 Millions.
 
-|                    |   TOTAL    | DID NOT VOTE |    YES    |     NO     | NOWITHVETO |  ABSTAIN  | NOT STAKED |
-|--------------------|------------|--------------|-----------|------------|------------|-----------|------------|
+|                   |   TOTAL    | DID NOT VOTE |    YES    |     NO     | NOWITHVETO |  ABSTAIN  | NOT STAKED |
+|-------------------|------------|--------------|-----------|------------|------------|-----------|------------|
 | ATONE Distributed | 96,997,800 |   10,445,719 | 6,374,676 | 48,015,988 | 10,780,005 | 5,672,466 | 15,708,946 |
-| *% Ownership*      |            | 11%          | 7%        | 50%        | 11%        | 6%        | 16%        |
+| *% Ownership*     |            | 11%          | 7%        | 50%        | 11%        | 6%        | 16%        |
 | *% ATOM prop 848* |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
 
 - The proposed ATONE supply is around ~2/7 (28.29%) of the ATOM supply at the 
@@ -153,9 +156,10 @@ ATONE distribution will be of approximately ~97 Millions.
 > information or calculations provided by them are subject to revision.
 
 We acknowledge there are additional details to be discussed for the final ATONE
-distribution, such as for example [issue #13](https://github.com/atomone-hub/genesis/issues/13)
+distribution, such as for example 
+[issue #13](https://github.com/atomone-hub/genesis/issues/13)
 from the AtomOne genesis repo, but these are intentionally left out of this
-proposal as it seeks to establish a baseline distribution mechanism.
+proposal as it only seeks to establish a baseline distribution mechanism.
 
 ## Consequences
 
