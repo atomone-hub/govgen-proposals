@@ -44,7 +44,7 @@ intelligent, aligned community governance structure.
 
 In accordance with AtomOne's foundational principles and the discussions
 surrounding the token distribution, we propose the ATONE distribution mechanism
-outlined below, reflecting an attempt to create balanced approach that rewards
+outlined below, reflecting an attempt to create a balanced approach that rewards
 participation, engagement, and alignment with AtomOne's vision. The intent of
 the distribution mechanism is to *increase* the percentage ownership in the
 network for the *NO* and *No With Veto* (NWV) votes on proposal 848, but to also
