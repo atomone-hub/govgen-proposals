@@ -138,7 +138,8 @@ ATONE distribution will be of approximately ~97 Millions.
 | *% Ownership*      |            | 11%          | 7%        | 50%        | 11%        | 6%        | 16%        |
 | *% ATOM prop 848* |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
 
-- The proposed ATONE supply is ~1/7 of the ATOM supply at the time of proposal 848.
+- The proposed ATONE supply is around ~2/7 (28.29%) of the ATOM supply at the 
+  time of proposal 848.
 - The `C` multiplier is computed as ~1,620.
 - The ICF slashing represents a total of 12,677,878 ATOM
 
