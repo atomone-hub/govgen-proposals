@@ -122,7 +122,7 @@ The following table is also provided for a quick recap:
 
 |                     |  DNV      | YES | ABSTAIN | NO |    NWV    |
 |---------------------|-----------|-----|---------|----|-----------|
-| Bonded multiplier   | C x malus |  1  |    C    | 9  | 9 x bonus |
+| Bonded multiplier   | C x malus |  1  |    C    | 9  | 9 + bonus |
 | Unbonded multiplier | C x malus |  -  |    -    | -  |     -     |
 
 Accompanying code that implements the proposed distribution mechanism is
