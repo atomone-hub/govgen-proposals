@@ -250,6 +250,8 @@ govgend tx <MODULE> <TRANSACTION> [FLAGS]
    --chain-id govgen-1 \
    --fees 5000ugovgen \
    --generate-only \
+   --gas auto \
+   --sequence <SEQUENCE_NUMBER> \
    --output-document tx.unsigned.json
 ```
 
