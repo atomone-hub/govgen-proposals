@@ -30,7 +30,7 @@ of intelligent distribution and governance.
 > [!NOTE]
 > This proposal is intended solely to assess the opinions and feelings of the
 > GovGen community regarding the future of the proposed AtomOne (this
-> "*Sentiment Proposal*""). As such, the results of the vote on this Sentiment
+> "*Sentiment Proposal*"). As such, the results of the vote on this Sentiment
 > Proposal are not intended to be, and will not be, binding or determinative in
 > any way.
 > 
