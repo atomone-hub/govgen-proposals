@@ -195,9 +195,6 @@ proposal as it only seeks to establish a baseline distribution mechanism.
 
 ## Alternatives
 
-The methodology proposed here was discussed and revised through multiple rounds
-based on community feedback during the 
-[GovGen Townhalls](https://github.com/atomone-hub/genesis/tree/main/GovGen_Townhalls). 
 Should this proposal fail to reach approval from the community, alternative
 distribution mechanisms might be discussed and used instead. We did not evaluate
 alternative mechanisms as part of this proposal, but the proposal methodology
