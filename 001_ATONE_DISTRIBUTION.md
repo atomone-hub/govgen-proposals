@@ -8,6 +8,7 @@
 * March 21st 2024: reduce the final supply by a factor of 10.
 * March 28th 2024: update the base multiplier for *No* and *NWV* votes to x9
 * April 3rd 2024: further text refinements for clarity and formality
+* April 9th 2024: added disclaimer and clarifications on bonus and malus
 
 ## Status
 
@@ -25,6 +26,23 @@ around the ATONE distribution, and leveraging the snapshot from Cosmos Hub's
 [proposal 848](https://www.mintscan.io/cosmos/proposals/848), 
 it aims to reward participation and engagement while adhering to AtomOne's ethos
 of intelligent distribution and governance.
+
+> [!NOTE]
+> This proposal is intended solely to assess the opinions and feelings of the
+> GovGen community regarding the future of the proposed AtomOne (this
+> "*Sentiment Proposal*""). As such, the results of the vote on this Sentiment
+> Proposal are not intended to be, and will not be, binding or determinative in
+> any way.
+> 
+> It is the proposal submitter's understanding and hope that the GovGen
+> community will be able to use the results of this and other Sentiment
+> Proposals to develop in the future a binding decision-making/governance
+> process to be determined (potentially including an upgrade to GovGen's
+> software) with a goal of shaping the potential AtomOne chain. At this early
+> stage, this and other Sentiment Proposals are anticipated to be introduced
+> with an intention to better understand the GovGen community’s general
+> preferences and views, and also to measure the ratio of active participants
+> to help determine the quorum for future proposals.
 
 ## Context
 
