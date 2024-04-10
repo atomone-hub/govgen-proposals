@@ -252,7 +252,7 @@ govgend tx <MODULE> <TRANSACTION> [FLAGS]
    --generate-only \
    --gas auto \
    --sequence <SEQUENCE_NUMBER> \
-   --output-document tx.unsigned.json
+   > tx.unsigned.json
 ```
 
 Here, `MODULE` refers to the Cosmos SDK module name, and `TRANSACTION` is the
@@ -293,7 +293,9 @@ govgend tx gov submit-proposal \
    --chain-id govgen-1 \
    --fees 5000ugovgen \
    --generate-only \
-   --output-document tx.unsigned.json
+   --gas auto \
+   --sequence <SEQUENCE_NUMBER> \
+   > tx.unsigned.json
 ```
 
 Here, `<path/to/PROP.json>` refers to the path to a JSON file that contains
