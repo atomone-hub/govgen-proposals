@@ -28,11 +28,10 @@ it aims to reward participation and engagement while adhering to AtomOne's ethos
 of intelligent distribution and governance.
 
 > [!NOTE]
-> This proposal is intended solely to assess the opinions and feelings of the
-> GovGen community regarding the future of the proposed AtomOne (this
-> "*Sentiment Proposal*"). As such, the results of the vote on this Sentiment
-> Proposal are not intended to be, and will not be, binding or determinative in
-> any way.
+> This "*Sentiment Proposal*" is intended solely to assess the opinions and
+> ideas of the GovGen community regarding the future of AtomOne.
+> As such, the results of the vote on this Sentiment Proposal are not intended 
+> to be, and will not be, binding or determinative in any way.
 > 
 > It is the proposal submitter's understanding and hope that the GovGen
 > community will be able to use the results of this and other Sentiment
