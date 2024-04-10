@@ -3,8 +3,10 @@
 > [!WARNING]
 > WE REMIND THE READER THAT THE [`govgend`](https://github.com/atomone-hub/govgen)
 > BINARY MENTIONED IN THIS PAGE **HAS NOT BEEN AUDITED YET**.
+>
 > PLEASE USE **EXTREME CAUTION** WHEN USING THIS SOFTWARE, AND USE IT AT YOUR OWN RISK.
 > WE ADVISE - FOR THE TIME BEING - TO AVOID USING IT WITH YOUR PERSONAL PRIVATE KEY(s).
+>
 > THIS IS **ESPECIALLY IMPORTANT** AS GOVGEN RELIES ON AND USES ACCOUNTS DERIVED FROM
 > THE COSMOS HUB, AND THIS MEANS THERE IS THE RISK OF COMPROMISING YOUR COSMOS HUB
 > ACCOUNT AS WELL.
@@ -439,7 +441,9 @@ govgend tx gov vote <PROPOSAL_ID> <VOTE_OPTION> \
    --chain-id govgen-1 \
    --fees 5000ugovgen \
    --generate-only \
-   --output-document tx.unsigned.json
+   --gas auto \
+   --sequence <SEQUENCE_NUMBER> \
+   > tx.unsigned.json
 ```
 
 While the [official Cosmos SDK
