@@ -200,7 +200,7 @@ alternative mechanisms as part of this proposal, but the proposal methodology
 was revised based on community feedback during the
 [GovGen Townhalls](https://github.com/atomone-hub/genesis/tree/main/GovGen_Townhalls).
 
-## Governance votes
+## Governance votes <ADD LINK of Voting page for Govgen holders here>
 
 * **YES**: You support the outlined ATONE distribution mechanism, recognizing
            the importance of aligning with AtomOne's core values and principles.
