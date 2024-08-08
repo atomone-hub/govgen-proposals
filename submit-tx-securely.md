@@ -123,7 +123,18 @@ the github release:
 
 ```bash
 cat SHA256SUMS-v1.0.3.txt
+472eb3ae608e0de218dc68e25b8cf50bb1e6a5f1632b3ce8242a6e9deacdf7c8  govgend-v1.0.3-darwin-amd64
+ebb84405042f76640083ebb9cfca3b71a1cc32d913dc1f1dee37953382e12d0a  govgend-v1.0.3-darwin-arm64
+a32316a9d37bb85d06a353e2385ea3cac916ed2794853e0ee9f31be2ffe24181  govgend-v1.0.3-linux-amd64
+0ec71e334691435040bcac046a2b6322aa6b5ab554553e07f184694fd717777b  govgend-v1.0.3-linux-arm64
+5d65126d95cc15add0bbbbbae12b03206623d414538f5d94ed31359e0293ba91  govgend-v1.0.3-windows-amd64.exe
+efd7a86a77bdc815c1426df0e261ce949c4d517b749d1e8a46ef1f1ed6f24720  govgend-v1.0.3-windows-arm64.exe
+```
+
+```bash
 sha256sum $GOPATH/bin/govgend
+a32316a9d37bb85d06a353e2385ea3cac916ed2794853e0ee9f31be2ffe24181
+# match the hash of linux/adm64 version
 ```
 
 > [!WARNING]
