@@ -45,23 +45,23 @@ any reason, it would be unable to send data to a potential attacker.
 
 ### 1. Download the `govgend` binary
 
-- Go to https://github.com/atomone-hub/govgen/releases/tag/v1.0.1 (or the
+- Go to https://github.com/atomone-hub/govgen/releases/tag/v1.0.3 (or the
   [latest available release](https://github.com/atomone-hub/govgen/releases)
   used by the GovGen chain)
 
 ![assets](img/assets.png)
 
 - Download the binary that corresponds to your OS
-- Download the file `SHA256SUMS-v1.0.1.txt`
+- Download the file `SHA256SUMS-v1.0.3.txt`
 - Make sure that the `sha256sum` of the binary you have downloaded matches the
   `sha1sum` listed in that file. From a terminal window type:
 
 ```bash
-sha256sum -c --ignore-missing SHA256SUMS-v1.0.1.txt 
+sha256sum -c --ignore-missing SHA256SUMS-v1.0.3.txt 
 ```
 
 ```bash
-govgend-v1.0.1-linux-amd64: OK
+govgend-v1.0.3-linux-amd64: OK
 ```
 
 - Safely copy the binary into your **offline** and **online computers**, to a
@@ -82,7 +82,7 @@ alternatively (you can know its location on the online computer typing `which
 govgend`):
 
 ```bash
-git clone --branch v1.0.1 --depth 1 https://github.com/atomone-hub/govgen.git
+git clone --branch v1.0.3 --depth 1 https://github.com/atomone-hub/govgen.git
 cd govgen && make install
 ```
 
@@ -98,7 +98,7 @@ GOROOT=$(go1.20.14 env GOROOT) PATH=$GOROOT/bin:$PATH make install
 ```
 
 After the command has been executed, verify your binary and ensure it produces
-the following output (for version v1.0.1):
+the following output (for version v1.0.3):
 
 ```bash
 govgend version --long
@@ -107,16 +107,31 @@ govgend version --long
 ```bash
 name: govgen
 server_name: govgend
-version: main-023ed8235a82e68079b2a61c2fa1be3f06cf7a6b
-commit: 023ed8235a82e68079b2a61c2fa1be3f06cf7a6b
+version: v1.0.3
+commit: 9c650a57c5e5de48bb3d59dc734ec18c10e39a2c
 build_tags: netgo,ledger
 go: go version go1.20.14 linux/amd64
 ```
 
+Similarly to the download step, and because Govgen has reproducible builds, you
+can assert that the compiled binary has the same signature than the one from
+the github release:
+
+- Download the file `SHA256SUMS-v1.0.3.txt` at the [github release page][v1.0.3]
+- Make sure that the `sha256sum` of the binary you have compiled matches the
+  `sha1sum` listed in the file that corresponds to your OS/architecture.
+
+```bash
+cat SHA256SUMS-v1.0.3.txt
+sha256sum $GOPATH/bin/govgend
+```
+
 > [!WARNING]
 > If you use `go install ./cmd/govgend` or any other method besides `make
-> install` to build the binary, this will likely result in dropped features
-> such as Ledger support, which is probably not what you want.
+> install` or `make build` to build the binary, this will likely result in
+> dropped features such as Ledger support, which is probably not what you want.
+> You also won't be able to have the same signature hash than the ones of the
+> github release.
 
 ### 2. Add your Ledger account to `govgend`’s keyring
 
@@ -453,3 +468,4 @@ covers issues related to private key management and transaction signing, adding
 an additional layer of security by only performing the signing using an offline
 computer.
 
+[v1.0.3]: https://github.com/atomone-hub/govgen/releases/tag/v1.0.3
