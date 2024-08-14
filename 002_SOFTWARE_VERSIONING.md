@@ -88,8 +88,8 @@ versions might be discussed and used instead.
 
 ## Governance votes
 
-* **YES**: You support the outlined software versioning.
-* **NO**: You do not support the proposed software versioning mechanism and
+* **YES**: You support the outlined software versioning choice.
+* **NO**: You do not support the proposed software versioning choice and
   advocate for an alternative approach.
 * **NO WITH VETO**: You strongly oppose the proposal due to perceived
   inequities or deviations from AtomOne's foundational principles.
