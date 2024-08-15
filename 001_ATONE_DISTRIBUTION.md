@@ -178,7 +178,7 @@ corresponds to an amount of 5,388,766 ATONE.
 The same amount will be minted to feed a reserved address (say
 `0x00000000000000000builddao`) for future funding of the Treasury DAO.
 
-- The proposed ATONE supply is:
+- The proposed ATONE supply is **107,775,332 ATONE**:
   ```
   ATONE Distributed + Community Pool + Reserved address 
   96,997,800        + 5,388,766      + 5,388,766        = 107,775,332
