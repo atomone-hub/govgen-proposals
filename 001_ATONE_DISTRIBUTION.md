@@ -179,8 +179,8 @@ The same amount will be minted to feed a reserved address (say
 `0x00000000000000000builddao`) for future funding of the Treasury DAO.
 
 - The proposed ATONE supply is:
-  ```math
-  ATONE Distributed + Community Pool + Reserved address
+  ```
+  ATONE Distributed + Community Pool + Reserved address 
   96,997,800        + 5,388,766      + 5,388,766        = 107,775,332
   ```
   which is around ~3/10 (31.43%) of the ATOM supply at the time of proposal 848
