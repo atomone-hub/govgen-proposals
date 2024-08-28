@@ -71,6 +71,9 @@ exceed a fixed 1/3 of the total supply. A decimation factor is also applied at
 the end to reduce the total supply by a factor of 10.
 
 **Note that, in addition, it is proposed that the ICF will be entirely slashed**.
+However, we propose to mint some funds for the development of the chain
+ecosystem, see the [Community Pool & reserved address](#community-pool--reserved-address)
+section for more details.
 
 > [!NOTE]
 > We specifically refer to the *ATOM that voted* on proposal 848, and not
@@ -177,6 +180,8 @@ corresponds to an amount of 5,388,766 ATONE.
 
 The same amount will be minted to feed a reserved address (say
 `0x00000000000000000builddao`) for future funding of the Treasury DAO.
+
+### Total supply
 
 - The proposed ATONE supply is **107,775,332 ATONE**:
   ```
