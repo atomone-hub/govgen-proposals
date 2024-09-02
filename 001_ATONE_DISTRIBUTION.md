@@ -140,8 +140,11 @@ section for more details.
 > contribution of each part as already discussed.
 
 > [!NOTE]
-> Vesting accounts will be turned into normal accounts. All vesting tokens will
-> be available immediately in AtomOne.
+> For this ATONE distribution, all Cosmos Hub's vesting accounts will be
+> considered as normal accounts meaning that the ATONE equivalent for those
+> Cosmos Hub (ATOM) vested tokens will be immediately available in AtomOne. Any
+> votes from staked vested tokens will be treated by the distribution algorithm
+> similarly to normal staked tokens.
 
 The following table is also provided for a quick recap:
 
