@@ -184,6 +184,49 @@ distribution, such as for example
 from the AtomOne genesis repo, but these are intentionally left out of this
 proposal as it only seeks to establish a baseline distribution mechanism.
 
+### Examples
+
+Here is a few examples to demonstrate how the distribution can be applied:
+
+Let's consider an account named `bob` which:
+- has a staked balance of 100 ATOM
+- has a liquid balance of 10 ATOM
+- has voted no to proposal 848
+
+`bob` will receive 91.57 ATONE, distributed according to:
+- his staked balance: `100 x 9 x 0.1 = 90 ATONE` where:
+  - `100` is its staked balance
+  - `9` is the no vote multiplier
+  - `0.1` is the decimation factor `K`
+- his liquid balance: `10 x 1.620 x 0.97 x 0.1 = 1.57 ATONE` where:
+  - `10` is its liquid balance
+  - `1.620` is the non-voting ATOM multiplier `C`
+  - `9.97` is the non-voter malus
+  - `0.1` is the decimation factor `K`
+
+Let's consider an other account named `alice` which:
+- has a staked balance of 100 ATOM distributed according to:
+  - 20 ATOM to validator `val1`
+  - 80 ATOM to validator `val2`
+- no liquid balance
+- didn't vote on proposal 848
+
+Because `alice` didn't vote, she inherits her validators' vote:
+- `val1` voted no with veto
+- `val2` voted yes
+
+`alice` will receive 26.54 ATONE, distributed according to:
+- her staked balance `18.54 + 8 = 26.54 ATONE`:
+  - `20 x 9 x 1.03 x 0.1 = 18.54 ATONE` where:
+    - `20` is the `val1` delegation
+    - `9` is the no vote multiplier
+    - `1.03` is the no with veto bonus
+    - `0.1` is the decimation factor `K`
+  - `80 x 1 x 0.1 = 8 ATONE` where:
+    - `80` is the `val2` delegation
+    - `1` is the yes vote multiplier
+    - `0.1` is the decimation factor `K`
+
 ## Consequences
 
 * Establishes a fair and structured token distribution mechanism that aligns 
