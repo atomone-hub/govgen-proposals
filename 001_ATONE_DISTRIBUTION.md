@@ -188,7 +188,7 @@ proposal as it only seeks to establish a baseline distribution mechanism.
 
 Here is a few examples to demonstrate how the distribution can be applied:
 
-1) Let's consider an account named `bob` which:
+Let's consider an account named `bob` which:
 - has a staked balance of 100 ATOM
 - has a liquid balance of 10 ATOM
 - has voted no to proposal 848
@@ -204,7 +204,7 @@ Here is a few examples to demonstrate how the distribution can be applied:
   - `9.97` is the non-voter malus
   - `0.1` is the decimation factor `K`
 
-2) Let's consider an other account named `alice` which:
+Let's consider an other account named `alice` which:
 - has a staked balance of 100 ATOM distributed according to:
   - 20 ATOM to validator `val1`
   - 80 ATOM to validator `val2`
