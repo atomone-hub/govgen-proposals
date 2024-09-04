@@ -70,7 +70,7 @@ codebase to fork to 4 versions:
 - v18 adds the wasmd and feemarket module
 
 AtomOne will not have any VM functionality as
-specified in the draft of the [Constitution].
+specified in the draft of the [Constitution], thus v18 gets automatically discarded.
 
 Then, considering that the first version of AtomOne won't have IBC or ICS
 enabled, there's no advantage in choosing to fork v16 or v17.
