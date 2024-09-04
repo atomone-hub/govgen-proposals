@@ -47,7 +47,7 @@ While v0.45 is a battle-tested version and has proven to be viable, an [audit
 driven by OAK Security][audit] in early 2024 has reported some serious threats
 that have been fixed in v0.47. 
 
-On the other hand, v0.50 brings some interesting features in term of
+On the other hand, while v0.50 brings some interesting features in term of
 modularity, but it's not used by the CosmosHub yet (at the time of writing,
 Gaia v19 upgrade proposal is still in voting period).
 
