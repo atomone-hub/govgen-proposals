@@ -73,7 +73,7 @@ AtomOne will not have any VM functionality as
 specified in the draft of the [Constitution], thus v18 gets automatically discarded.
 
 Considering that the first version of AtomOne will not have IBC or ICS
-enabled, there's no advantage in choosing to fork v16 or v17.
+enabled, there is no advantage in choosing to fork v16 or v17.
 
 This left out v15, which is the version we propose to fork for AtomOne.
 
