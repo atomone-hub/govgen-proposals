@@ -193,7 +193,7 @@ The same amount will be minted to feed a reserved address (say
   ```
   which is around ~3/10 (31.43%) of the ATOM supply at the time of proposal 848
   (342,834,268).
-- The `C` multiplier is computed as ~1,620.
+- The `C` multiplier is computed as ~1.62.
 - The ICF slashing represents a total of 12,677,878 ATOM
 
 > [!WARNING]
