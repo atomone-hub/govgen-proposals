@@ -75,7 +75,7 @@ specified in the draft of the [Constitution], thus v18 gets automatically discar
 Considering that the first version of AtomOne will not have IBC or ICS
 enabled, there is no advantage in choosing to fork v16 or v17.
 
-This left out v15, which is the version we propose to fork for AtomOne.
+This leaves out only v15, which is the version we propose to fork for AtomOne.
 
 ## Consequences
 
