@@ -49,7 +49,9 @@ that have been fixed in v0.47.
 
 On the other hand, while v0.50 brings some interesting features in term of
 modularity, it is not used by the CosmosHub yet (at the time of writing,
-Gaia v19 upgrade proposal is still in voting period).
+Gaia v19 upgrade proposal is still in voting period). As we believe that newer
+versions have less guarantees in terms of reliability, we suggest to discard
+v0.50 as well.
 
 In conclusion, we suggest that AtomOne depends on Cosmos-SDK v0.47.
 
