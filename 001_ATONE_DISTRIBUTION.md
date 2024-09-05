@@ -9,10 +9,12 @@
 * March 28th 2024: update the base multiplier for *No* and *NWV* votes to x9
 * April 3rd 2024: further text refinements for clarity and formality
 * April 9th 2024: added disclaimer and clarifications on bonus and malus
+* August 14th 2024: add Community Pool section and Vesting accounts note
+* September 5th 2024: Update status to "Under review"
 
 ## Status
 
-Draft
+Under review
 
 ## Summary
 
@@ -70,6 +72,9 @@ exceed a fixed 1/3 of the total supply. A decimation factor is also applied at
 the end to reduce the total supply by a factor of 10.
 
 **Note that, in addition, it is proposed that the ICF will be entirely slashed**.
+However, we propose to mint some funds for the development of the chain
+ecosystem, see the [Community Pool & reserved address](#community-pool--reserved-address)
+section for more details.
 
 > [!NOTE]
 > We specifically refer to the *ATOM that voted* on proposal 848, and not
@@ -135,6 +140,13 @@ the end to reduce the total supply by a factor of 10.
 > well as unbonded ATOM, the resulting ATONE balance will come from the
 > contribution of each part as already discussed.
 
+> [!NOTE]
+> For this ATONE distribution, all Cosmos Hub's vesting accounts will be
+> considered as normal accounts meaning that the ATONE equivalent for those
+> Cosmos Hub (ATOM) vested tokens will be immediately available in AtomOne. Any
+> votes from staked vested tokens will be treated by the distribution algorithm
+> similarly to normal staked tokens.
+
 The following table is also provided for a quick recap:
 
 |                     |  DNV      | YES | ABSTAIN | NO |    NWV    |
@@ -164,9 +176,25 @@ ATONE distribution will be of approximately ~97 Millions.
 | *% Ownership*     |            | 11%          | 7%        | 50%        | 11%        | 6%        | 16%        |
 | *% ATOM prop 848* |            | 20%          | 21%       | 16%        | 3%         | 10%       | 30%        |
 
-- The proposed ATONE supply is around ~2/7 (28.29%) of the ATOM supply at the 
-  time of proposal 848.
-- The `C` multiplier is computed as ~1,620.
+### Community Pool & reserved address
+
+The AtomOne Community Pool balance follows a different procedure, we propose
+that 1/18 of the ATONE distributed be minted to feed the Community Pool. This
+corresponds to an amount of 5,388,766 ATONE.
+
+The same amount will be minted to feed a reserved address for future funding of
+the Treasury DAO.
+
+### Total supply
+
+- The proposed ATONE supply is **107,775,332 ATONE**:
+  ```
+  ATONE Distributed + Community Pool + Reserved address 
+  96,997,800        + 5,388,766      + 5,388,766        = 107,775,332
+  ```
+  which is around ~3/10 (31.43%) of the ATOM supply at the time of proposal 848
+  (342,834,268).
+- The `C` multiplier is computed as ~1.62.
 - The ICF slashing represents a total of 12,677,878 ATOM
 
 > [!WARNING]
