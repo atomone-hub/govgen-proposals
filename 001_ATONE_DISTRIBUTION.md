@@ -2,15 +2,15 @@
 
 ## Changelog
 
-* 2024-03-13: first draft
-* 2024-03-14: add data and code
-* 2024-03-21: update distribution to ensure non-voters do not exceed 1/3 of ATONE supply
-* 2024-03-21: reduce the final supply by a factor of 10.
-* 2024-31-28: update the base multiplier for *No* and *NWV* votes to x9
-* 2024-04-03: further text refinements for clarity and formality
-* 2024-03-09: added disclaimer and clarifications on bonus and malus
-* 2024-08-03: add Community Pool section and Vesting accounts note
-* 2024-09-05: Update status to "Under review"
+* March 13th 2024: first draft
+* March 14th 2024: add data and code
+* March 21st 2024: update distribution to ensure non-voters do not exceed 1/3 of ATONE supply
+* March 21st 2024: reduce the final supply by a factor of 10.
+* March 28th 2024: update the base multiplier for *No* and *NWV* votes to x9
+* April 3rd 2024: further text refinements for clarity and formality
+* April 9th 2024: added disclaimer and clarifications on bonus and malus
+* August 14th 2024: add Community Pool section and Vesting accounts note
+* September 5th 2024: Update status to "Under review"
 
 ## Status
 
