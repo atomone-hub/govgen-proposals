@@ -182,7 +182,7 @@ that 1/18 of the ATONE distributed be minted to feed the Community Pool. This
 corresponds to an amount of 5,388,766 ATONE.
 
 The same amount will be minted to feed a reserved address (say
-`0x00000000000000000builddao`) for future funding of the Treasury DAO.
+`0x00000000000000000buidldao`) for future funding of the Treasury DAO.
 
 ### Total supply
 
