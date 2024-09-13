@@ -11,10 +11,11 @@
 * April 9th 2024: added disclaimer and clarifications on bonus and malus
 * August 14th 2024: add Community Pool section and Vesting accounts note
 * September 5th 2024: Update status to "Under review"
+* September 13th 2024: Update status to "On Chain"
 
 ## Status
 
-Under review
+On Chain
 
 ## Summary
 
