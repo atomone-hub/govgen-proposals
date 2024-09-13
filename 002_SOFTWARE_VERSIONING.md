@@ -3,10 +3,11 @@
 ## Changelog
 
 * August 14th 2024: First draft
+* September 13th 2024: Update status to "On Chain"
 
 ## Status
 
-Draft
+On Chain
 
 ## Summary
 
