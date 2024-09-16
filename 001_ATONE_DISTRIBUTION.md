@@ -158,8 +158,8 @@ The following table is also provided for a quick recap:
 > [!NOTE]
 > *bonus* and *malus* are multipliers, respectively equal to `1.03` and `0.97`
 > as per the above specifications. These multipliers incorporate the original
-> quantity and the actual bonus/malus, i.e. they are computed as `1 + 0.3` and
-> `1 - 0.3` respectively.
+> quantity and the actual bonus/malus, i.e. they are computed as `1 + 0.03` and
+> `1 - 0.03` respectively.
 
 Accompanying code that implements the proposed distribution mechanism is
 available at [https://github.com/atomone-hub/govbox](https://github.com/atomone-hub/govbox). Please refer to the 
