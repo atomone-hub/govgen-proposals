@@ -45,23 +45,23 @@ any reason, it would be unable to send data to a potential attacker.
 
 ### 1. Download the `govgend` binary
 
-- Go to https://github.com/atomone-hub/govgen/releases/tag/v1.0.3 (or the
+- Go to https://github.com/atomone-hub/govgen/releases/tag/v1.0.4 (or the
   [latest available release](https://github.com/atomone-hub/govgen/releases)
   used by the GovGen chain)
 
 ![assets](img/assets.png)
 
 - Download the binary that corresponds to your OS
-- Download the file `SHA256SUMS-v1.0.3.txt`
+- Download the file `SHA256SUMS-v1.0.4.txt`
 - Make sure that the `sha256sum` of the binary you have downloaded matches the
   `sha1sum` listed in that file. From a terminal window type:
 
 ```bash
-sha256sum -c --ignore-missing SHA256SUMS-v1.0.3.txt 
+sha256sum -c --ignore-missing SHA256SUMS-v1.0.4.txt 
 ```
 
 ```bash
-govgend-v1.0.3-linux-amd64: OK
+govgend-v1.0.4-linux-amd64: OK
 ```
 
 - Safely copy the binary into your **offline** and **online computers**, to a
@@ -82,7 +82,7 @@ alternatively (you can know its location on the online computer typing `which
 govgend`):
 
 ```bash
-git clone --branch v1.0.3 --depth 1 https://github.com/atomone-hub/govgen.git
+git clone --branch v1.0.4 --depth 1 https://github.com/atomone-hub/govgen.git
 cd govgen && make install
 ```
 
@@ -98,7 +98,7 @@ GOROOT=$(go1.20.14 env GOROOT) PATH=$GOROOT/bin:$PATH make install
 ```
 
 After the command has been executed, verify your binary and ensure it produces
-the following output (for version v1.0.3):
+the following output (for version v1.0.4):
 
 ```bash
 govgend version --long
@@ -107,7 +107,7 @@ govgend version --long
 ```bash
 name: govgen
 server_name: govgend
-version: v1.0.3
+version: v1.0.4
 commit: 9c650a57c5e5de48bb3d59dc734ec18c10e39a2c
 build_tags: netgo,ledger
 go: go version go1.20.14 linux/amd64
@@ -117,23 +117,23 @@ Similarly to the download step, and because Govgen has reproducible builds, you
 can assert that the compiled binary has the same signature than the one from
 the github release:
 
-- Download the file `SHA256SUMS-v1.0.3.txt` at the [github release page][v1.0.3]
+- Download the file `SHA256SUMS-v1.0.4.txt` at the [github release page][v1.0.4]
 - Make sure that the `sha256sum` of the binary you have compiled matches the
   `sha1sum` listed in the file that corresponds to your OS/architecture.
 
 ```bash
-cat SHA256SUMS-v1.0.3.txt
-472eb3ae608e0de218dc68e25b8cf50bb1e6a5f1632b3ce8242a6e9deacdf7c8  govgend-v1.0.3-darwin-amd64
-ebb84405042f76640083ebb9cfca3b71a1cc32d913dc1f1dee37953382e12d0a  govgend-v1.0.3-darwin-arm64
-a32316a9d37bb85d06a353e2385ea3cac916ed2794853e0ee9f31be2ffe24181  govgend-v1.0.3-linux-amd64
-0ec71e334691435040bcac046a2b6322aa6b5ab554553e07f184694fd717777b  govgend-v1.0.3-linux-arm64
-5d65126d95cc15add0bbbbbae12b03206623d414538f5d94ed31359e0293ba91  govgend-v1.0.3-windows-amd64.exe
-efd7a86a77bdc815c1426df0e261ce949c4d517b749d1e8a46ef1f1ed6f24720  govgend-v1.0.3-windows-arm64.exe
+cat SHA256SUMS-v1.0.4.txt
+6dfae699a5f6bbe0d2bb982a2b97e0672a66761b2d6776b4fe772428f7ce803e  govgend-v1.0.4-darwin-amd64
+4276badd4ad79802980395f349b98bd54e180f0b4f74082f163499ccc26d2af1  govgend-v1.0.4-darwin-arm64
+912a4972c6a756327676dd5936ccaa26f964096c0cb56038c748006d0c20f578  govgend-v1.0.4-linux-amd64
+728cdeaf3825724c728666da2a652bf8710d00366df13cb9cea8d7da18f74d66  govgend-v1.0.4-linux-arm64
+a875ad7f2801239e6b87f03d1cbe1fe3f4c155029f928c5203a7035a203054d3  govgend-v1.0.4-windows-amd64.exe
+fb131642919b85ba9b4d6dfa26e5ff9a76018d3e64b23419d1f004114bd813ea  govgend-v1.0.4-windows-arm64.exe
 ```
 
 ```bash
 sha256sum $GOPATH/bin/govgend
-a32316a9d37bb85d06a353e2385ea3cac916ed2794853e0ee9f31be2ffe24181
+912a4972c6a756327676dd5936ccaa26f964096c0cb56038c748006d0c20f578
 # match the hash of linux/adm64 version
 ```
 
@@ -479,4 +479,4 @@ covers issues related to private key management and transaction signing, adding
 an additional layer of security by only performing the signing using an offline
 computer.
 
-[v1.0.3]: https://github.com/atomone-hub/govgen/releases/tag/v1.0.3
+[v1.0.4]: https://github.com/atomone-hub/govgen/releases/tag/v1.0.4
